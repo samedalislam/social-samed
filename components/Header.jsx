@@ -11,23 +11,23 @@ const Header = () => {
                 <p>SOCIAL</p>
             </div>
             <nav>
-                <div className="item">
+                <div className="item" onClick={() => router.push('/')}>
                     <MdOutlineHome />
                     <p>Home</p>
                 </div>
-                <div className="item">
+                <div className="item" onClick={() => router.push('/trending')}>
                     <MdOutlineElectricBolt />
                     <p>Trending</p>
                 </div>
-                <div className="item">
+                <div className="item" onClick={() => router.push('/network')}>
                     <MdOutlinePersonAdd />
                     <p>Network</p>
                 </div>
-                <div className="item">
+                <div className="item" onClick={() => router.push('/groups')}>
                     <MdOutlinePeople />
                     <p>Groups</p>
                 </div>
-                <div className="item">
+                <div className="item" onClick={() => router.push('/notifications')}>
                     <MdOutlineNotifications />
                     <p>Notifications</p>
                 </div>

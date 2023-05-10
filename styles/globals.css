@@ -4,8 +4,8 @@
 /* -------- Variables -------------- */
 
 :root {
-    --primary: rgb(0, 136, 255);
-    --secondary: #F6F1F1;
+    --primary: #00a8ff;
+    --secondary: #f5f6fa;
     --dark: #2A2F4F;
     --light: #F0F0F0;
 }
@@ -31,7 +31,7 @@
     width: 100%;
     height: 70px;
     padding: 0 3em;
-    background: var(--dark);
+    background: var(--primary);
     color: var(--light);
     display: flex;
     align-items: center;
@@ -70,6 +70,7 @@ nav .item {
 
 nav .item svg {
     font-size: 1.6em;
+    color: var(--light);
 }
 
 nav .item p {
@@ -144,6 +145,7 @@ nav .item p {
 .sidebar-item svg {
     font-size: 2em;
     margin-right: .4em;
+    color: var(--primary);
 }
 
 .sidebar-item p {
@@ -186,6 +188,7 @@ nav .item p {
     background: #fff;
     border-radius: 7px;
     overflow-y: scroll;
+    user-select: none;
 }
 
 .follow::-webkit-scrollbar {
@@ -228,6 +231,7 @@ nav .item p {
     font-size: .8em;
 }
 
+.btn,
 .follow-item .follow-btn {
     align-self: center;
     position: absolute;
@@ -238,6 +242,10 @@ nav .item p {
     border-radius: 99px;
     border: .6px solid grey;
     background: unset;
+}
+
+.follow-item .follow-btn:hover {
+    background: rgb(237, 236, 236);
 }
 
 .widget .about-company {
@@ -255,6 +263,7 @@ nav .item p {
     border-radius: 5px;
     padding: .3em 1.4em .6em;
     margin-bottom: 2em;
+    user-select: none;
 }
 
 .createNewPost .top {
@@ -282,13 +291,18 @@ nav .item p {
     border: none;
     outline: none;
     height: 80%;
-    background: whitesmoke;
+    background: var(--secondary);
+    color: var(--dark);
+}
+
+.createNewPost .top input::placeholder {
+    color: var(--dark);
 }
 
 .createNewPost .divider {
     width: 100%;
     height: .7px;
-    background: #000;
+    background: var(--dark);
     margin: .6em 0;
 }
 
@@ -330,6 +344,7 @@ nav .item p {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    user-select: none;
 }
 
 .post .top .left {
@@ -381,6 +396,7 @@ nav .item p {
     align-items: center;
     justify-content: space-around;
     padding: .5em 0 .4em;
+    user-select: none;
 }
 
 .content .negotiations .item {
@@ -400,4 +416,179 @@ nav .item p {
     padding: unset;
     font-weight: 300;
     font-size: 0.97em;
+}
+
+
+/* Profile */
+.profile {
+    width: 200px;
+    height: 240px;
+    background: whitesmoke;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.profile .poster {
+    width: 100%;
+    height: 100px;
+    background: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile .poster .banner {
+    width: 100%;
+    height: inherit;
+}
+
+.profile .poster .banner .banner-img {
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+}
+
+.profile .poster .row-avatar {
+    position: relative;
+    top: -45%;
+    left: 0;
+}
+
+.profile .poster .profile-avatar {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile .username {
+    margin-top: 2em;
+    font-size: 1.1em;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.profile .username:hover {
+    text-decoration: underline;
+}
+
+.profile .bio {
+    font-size: .95em;
+    font-weight: 300;
+}
+
+.profile .btn {
+    /* position: unset; */
+    position: relative;
+    bottom: -.6em;
+    left: 0;
+    width: 90%;
+    padding: .5em 0;
+}
+
+/* Network */
+.network {
+    max-height: calc(100vh - 70px);
+    display: flex;
+}
+
+.network .profiles {
+    flex: 3.4;
+    padding: 2em 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+    overflow-y: scroll;
+}
+
+
+
+
+/* Notifications */
+.notifications {
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    background: rgb(211, 209, 209);
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.notifications .wrapper {
+    margin-top: 1.3em;
+    width: 450px;
+    border-radius: 5px;
+    min-height: calc(100vh - 30vh);
+    background: #fff;
+    padding: 1em;
+}
+
+.notifications .wrapper .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.notifications .wrapper .top p {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.notifications .wrapper .top svg {
+    font-size: 1.4em;
+    cursor: pointer;
+}
+
+.notifications .wrapper .divider {
+    width: 100%;
+    height: .6px;
+    background: lightgrey;
+    margin: .5em 0 1.1em;
+}
+
+.notifications .notifications-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.notifications .notifications-wrapper .item {
+    width: 100%;
+    padding: .4em .7em;
+    border-radius: 4px;
+    display: flex;
+    gap: .6em;
+    cursor: pointer;
+}
+
+.notifications .notifications-wrapper .item:hover {
+    background: whitesmoke;
+}
+
+.notifications .notifications-wrapper .item .avatar {
+    width: 68px;
+    height: 68px;
+}
+
+.notifications .notifications-wrapper .item .details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.notifications .notifications-wrapper .item .details .alert {
+    font-size: 1.1em;
+    font-weight: 300;
+}
+
+.notifications .notifications-wrapper .item .details .timestamp {
+    font-size: .9em;
+    font-weight: 200;
 }
